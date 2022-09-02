@@ -1,6 +1,6 @@
 Import-Module ActiveDirectory
 
-#list in file samaccountname per str
+#list in file samaccountname per string
 $users = get-content C:\users.txt
 $domain = example.com
 
