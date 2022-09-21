@@ -1,0 +1,7 @@
+Channel: SIP/INSERT_PHONE_NUMBER
+CallerID: 1002
+Application: Playback
+Data: /var/lib/asterisk/sounds/ru/custom/unifi-error
+MaxRetries: 1
+RetryTime: 60
+WaitTime: 30
