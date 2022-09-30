@@ -13,16 +13,18 @@ function find_device {
     fi
 }
 
-
+#Проверяем корректность указанного диска:
 find_device
 
+#Создаем 2 файла. Файл для загрузки и для разметки диска
+#1:
 cat << EOF > fstab.new
 $ROOT_UUID /               ext4    errors=remount-ro 0       1
 $BOOT_UUID  /boot/efi       vfat    umask=0077      0       1
 /swapfile                                 none            swap    sw              0       0
 EOF
 
-
+#2:
 cat << EOF > disk.part
 label: gpt
 label-id: E4CE9292-666D-458F-B489-DD0344D45C3C
