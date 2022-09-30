@@ -4,10 +4,8 @@ disk="/dev/$1"
 
 function find_device {
     if [[ -b $disk  ]]; then
-        device=$nvme
         echo "You select device: $disk"
     else
-        device=$sda
         echo "No disk found"
         exit 1
     fi
