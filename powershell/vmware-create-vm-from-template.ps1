@@ -1,5 +1,5 @@
 $templateName = 'template'
-$esxName = 'esx'
+$esxName = 'esxi01'
 $dsName = 'ds'
 $template = Get-Template -Name $templateName
 $ds = Get-Datastore -Name $dsName
