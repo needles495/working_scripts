@@ -55,7 +55,8 @@ mount $disk\1 /mnt/boot/efi/
 #get_obraz_usb_folder
 USB_ID_PATH=$(lsblk -o mountpoint | grep media | grep ubuntu)
 
-rsync -avz /media/ubuntu/$USB_ID_PATH/obraz/* /mnt/
+rsync -avz $USB_ID_PATH/obraz/* /mnt/
+#rsync -avz /media/ubuntu/$USB_ID_PATH/obraz/* /mnt/
 
 cp fstab.new /mnt/etc/fstab
 
