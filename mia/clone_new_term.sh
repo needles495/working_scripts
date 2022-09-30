@@ -38,6 +38,9 @@ mkfs.ext4 $disk\2
 BOOT_UUID=$(blkid | grep $disk | grep -P -o "UUID=.*\" " | sed 's/\ TYPE=.*//g' | sed 's/"//g' | head -1)
 ROOT_UUID=$(blkid | grep $disk | grep -P -o "UUID=.*\" " | sed 's/\ TYPE=.*//g' | sed 's/"//g' | tail -1)
 
+BOOT_UUID=$(lsblk -o UUID $disk\1 | tail -1)
+ROOT_UUID=$(lsblk -o UUID $disk\2 | tail -1)
+
 cat << EOF > fstab.new
 $ROOT_UUID /               ext4    errors=remount-ro 0       1
 $BOOT_UUID  /boot/efi       vfat    umask=0077      0       1
