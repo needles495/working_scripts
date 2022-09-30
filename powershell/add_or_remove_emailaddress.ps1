@@ -1,7 +1,7 @@
 Import-Module ActiveDirectory
 
 $users = get-content C:\users.txt
-
+$domain= "example.com"
 ForEach ($user in $users) {
    
    #disable email:
